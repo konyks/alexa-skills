@@ -1,0 +1,7 @@
+{
+  "name": "greeter",
+  "version": "1.0.0",
+  "description": "Greeter Alexa Skill",
+  "main": "index.js",
+  "author": "Serhiy Konyk"
+}
