@@ -1,0 +1,7 @@
+{
+  "name": "synonymizer",
+  "version": "1.0.0",
+  "description": "Alexa Skill that tells synonymies of English words.",
+  "main": "index.js",
+  "author": "Serhiy Konyk"
+}
