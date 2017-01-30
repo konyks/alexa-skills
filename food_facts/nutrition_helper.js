@@ -1,0 +1,1 @@
+// Helper class to retrieve and format the food nutrition information for the API
