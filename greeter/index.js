@@ -8,7 +8,7 @@ var alexa = require('alexa-app');
 
 var app = new alexa.app('greeter');
 
-// Lunch intent function
+// Launch intent function
 var launchIntentFunction = function(req, res){
     var prompt = 'Greeting to you! What is your name?';
     res.say(prompt).shouldEndSession(false);

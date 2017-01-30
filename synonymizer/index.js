@@ -6,6 +6,8 @@ var alexa = require('alexa-app');
 
 var app = new alexa.app('synonymizer');
 
+var thesaurus = require('thesaurus');
+
 // Launch intent function
 var launchIntentFunction = function(req, res){
     var prompt = 'Greeting to you! What word would you like to get synonymies for?';
@@ -35,7 +37,9 @@ app.intent('WordIntent', {
     'slots':{'WORD':'LITERAL'}
     ,'utterances':['{The world is} {apple|orange|car|boat|happy}']
 },function(req,res){
-    res.say('Synonymies for '+ req.slot('WORD')+' '); //TODO: call api to get the synonymies
+    var word = req.slot('WORD');
+    var synonymies = thesaurus.find(word).join(', ');
+    res.say('Synonymies for '+word+' are '+synonymies+'.');
 });
 
 module.exports = app;

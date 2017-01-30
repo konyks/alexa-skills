@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "Greeter Alexa Skill",
   "main": "index.js",
-  "author": "Serhiy Konyk"
+  "author": "Serhiy Konyk",
+  "dependencies": {
+    "alexa-app": "^2.4.0"
+  }
 }
