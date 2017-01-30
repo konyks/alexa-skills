@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "description": "Alexa Skill that tells synonymies of English words.",
   "main": "index.js",
-  "author": "Serhiy Konyk"
+  "author": "Serhiy Konyk",
+  "dependencies": {
+    "alexa-app": "^2.4.0",
+    "thesaurus": "^0.0.0"
+  }
 }
