@@ -1,2 +1,2 @@
 # alexa-skills
-Collection of sample Amazon Alexa skills.
+Synonymizer Alexa Skill
