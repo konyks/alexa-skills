@@ -27,6 +27,39 @@ var cancelIntentFunction = function (req, res) {
     res.say('Goodbye! Eath healthy!').shouldEndSession(true);
 };
 
+// Food intent function
+var foodIntentFunction = function (req, res) {
+    var foodName = req.slot('FOODNAME');
+
+    var reprompt = 'Tell me a food name to get nutrition information.';
+
+    if (_.isEmpty(foodName)) {
+        var prompt = 'I didn\`t hear a food name.';
+
+        res.say(prompt).reprompt(reprompt).shouldEndSession(false);
+
+        return true;
+    } else {
+        var nutritionHelper = new NutritionDataHelper();
+
+        nutritionHelper.requestNutritionData(foodName).then(function (foodData) {
+            var data = nutritionHelper.formatNutritionData(foodData);
+
+            console.log(data);
+
+            res.say(data).send();
+        }).catch(function (err) {
+            console.log(err.statusCode);
+
+            var prompt = 'I didn\'t have data for ' + foodName;
+
+            res.say(prompt).reprompt(reprompt).shouldEndSession(false).send();
+        });
+
+        return false;
+    }
+};
+
 app.launch(launchIntentFunction);
 
 app.intent('AMAZON.CancelIntent', {}, cancelIntentFunction);
@@ -36,24 +69,10 @@ app.intent('AMAZON.StopIntent', {}, cancelIntentFunction);
 app.intent('AMAZON.HelpIntent', {}, helpIntentFunction);
 
 app.intent('FoodInfo', {
-        'slots': {
-            'FOODNAME': 'LITERAL'
-        },
-        'utterances': ['{Food is} {apple|fish|pineapple|FOODNAME}']
+    'slots': {
+        'FOODNAME': 'LITERAL'
     },
-    function (req, res) {
-        var nutritionHelper = new NutritionDataHelper();
-        nutritionHelper.requestNutritionData(req.slot('FOODNAME')).then(function (foodData) {
-
-            //TODO: add some re prompt logic
-
-            var data = nutritionHelper.formatNutritionData(foodData);
-            console.log(data);
-            res.say(data).shouldEndSession(false).send();
-        }).catch(function (err) {
-            console.log(err.statusCode);
-        });
-    }
-);
+    'utterances': ['{Food is|Facts for|Food facts for|Calories for} {apple|fish|chicken|orange|FOODNAME}']
+}, foodIntentFunction);
 
 module.exports = app;

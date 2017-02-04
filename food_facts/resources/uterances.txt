@@ -1,0 +1,4 @@
+FoodInfo	Food is {orange|FOODNAME}
+FoodInfo	Facts for {apple|FOODNAME}
+FoodInfo	Food facts for {fish|FOODNAME}
+FoodInfo	Calories for {chicken|FOODNAME}
