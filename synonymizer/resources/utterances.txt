@@ -1,0 +1,20 @@
+WordIntent	The world is apple
+WordIntent	Synonymies for apple
+WordIntent	Similar words for apple
+WordIntent	Same words for apple
+WordIntent	The world is orange
+WordIntent	Synonymies for orange
+WordIntent	Similar words for orange
+WordIntent	Same words for orange
+WordIntent	The world is car
+WordIntent	Synonymies for car
+WordIntent	Similar words for car
+WordIntent	Same words for car
+WordIntent	The world is boat
+WordIntent	Synonymies for boat
+WordIntent	Similar words for boat
+WordIntent	Same words for boat
+WordIntent	The world is happy
+WordIntent	Synonymies for happy
+WordIntent	Similar words for happy
+WordIntent	Same words for happy
