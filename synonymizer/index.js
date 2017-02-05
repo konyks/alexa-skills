@@ -34,14 +34,14 @@ var wordIntentFuction = function (req, res) {
     var reprompt = 'Tell me a word to get synonymies for.';
 
     if (_.isEmpty(word)) {
-        var prompt = 'I didn\`t her a word.';
+        var prompt = 'I didn\`t hear a word.';
 
         res.say(prompt).reprompt(reprompt).shouldEndSession(false);
 
         return true;
     } else {
         var synonymies = thesaurus.find(word);
-        
+
         if (_.isEmpty(synonymies)) {
             var prompt = word + 'does not exist.';
 

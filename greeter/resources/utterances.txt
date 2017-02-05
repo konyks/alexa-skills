@@ -1,0 +1,4 @@
+NameIntent	My name is {bob|NAME}
+NameIntent	Name is {nick|NAME}
+NameIntent	I am {matt|NAME}
+NameIntent	My name is {jane|NAME}

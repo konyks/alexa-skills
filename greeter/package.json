@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Serhiy Konyk",
   "dependencies": {
-    "alexa-app": "^2.4.0"
+    "alexa-app": "^2.4.0",
+    "lodash": "^4.17.4"
   }
 }
